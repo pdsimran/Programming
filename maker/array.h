@@ -3,8 +3,6 @@
 
 using namespace std;
 
-#define DEFAULT_SIZE 20
-
 int * make_array(int size, int min = INT_MIN/2, int max = INT_MAX/2){
 	int * output;
 	srand (time(NULL));
