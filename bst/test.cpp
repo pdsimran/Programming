@@ -7,6 +7,6 @@
 using namespace std;
 
 int main(){
-	node * bst = make_bst(20, 1, 50);
+	node * bst = make_bst(40, 1, 100);
 	inorder(bst);
 }

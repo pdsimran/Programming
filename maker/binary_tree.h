@@ -3,6 +3,9 @@
 
 using namespace std;
 
+#ifndef BINARY_TREE
+#define BINARY_TREE
+
 struct node {
 	int value;
 	struct node * left;
@@ -21,3 +24,5 @@ void inorder(node * root){
 	inorder_traversal(root);
 	cout << endl;
 }
+
+#endif
