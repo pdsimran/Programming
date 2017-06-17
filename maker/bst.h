@@ -59,4 +59,19 @@ node * make_bst(int size = SIZE, int min = INT_MIN/2, int max = INT_MAX/2){
 	return root;
 }
 
+node * bst_search(node * root, int value){
+  node * current = NULL;
+  current = root;
+  while(current){
+    if(value == current->value){
+      return current;
+    } else if (value < current->value){
+      current = current->left;
+    } else if (value > current->value){
+      current = current->right;
+    }
+  }
+  return current;
+}
+
 #endif
