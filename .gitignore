@@ -1,3 +1,5 @@
 # Compiled source #
 ###################
 *.out
+*in.txt
+*.DS_Store
