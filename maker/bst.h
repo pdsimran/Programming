@@ -74,4 +74,34 @@ node * bst_search(node * root, int value){
   return current;
 }
 
+void print_path(node * root, int value){
+  while(root){
+    cout << root->value << "->";
+    if(value == root->value) break;
+    else if(value < root->value) root = root->left;
+    else if(value > root->value) root = root->right;
+  }
+  cout << endl;
+}
+
+void print_all_nodes_with_child(node * root){
+  if(!root) return;
+  cout << root->value;
+  
+  if(root->left){
+    cout << " (" << root->left->value << ",";
+  } else {
+    cout << " (NIL,";
+  }
+
+  if(root->right){
+    cout << root->right->value << ")" << endl;
+  } else {
+    cout << "NIL)" << endl;
+  }
+
+  print_all_nodes_with_child(root->left);
+  print_all_nodes_with_child(root->right);
+}
+
 #endif
