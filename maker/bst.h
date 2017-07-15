@@ -104,4 +104,31 @@ void print_all_nodes_with_child(node * root){
   print_all_nodes_with_child(root->right);
 }
 
+node * bst_minimum(node * root){
+  if(!root) return NULL;
+  while(root->left){
+    root = root->left;
+  }
+  return root;
+}
+
+node * bst_maximum(node * root){
+  if(!root) return NULL;
+  while(root->right){
+    root = root->right;
+  }
+  return root;
+}
+
+int bst_random_node(node * root){
+  node * minimum = bst_minimum(root);
+  node * maximum = bst_maximum(root);
+  int key;
+  while(true){
+    key = rand()%(maximum->value) - (minimum->value);
+    if( bst_search(root, key) ) break;
+  }
+  return key;
+}
+
 #endif
