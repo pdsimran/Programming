@@ -25,4 +25,19 @@ void inorder(node * root){
 	cout << endl;
 }
 
+int _binary_tree_height(node * root, int height){
+	if(!root) return height;
+	int left_height = _binary_tree_height(root->left, height+1);
+	int right_height = _binary_tree_height(root->right, height+1);
+	int tree_height = (left_height > right_height) ? left_height : right_height;
+	return tree_height;
+}
+
+// Null has height -1
+// a single node(just leaf node) has height 0
+int binary_tree_height(node * root){
+	int height = -1;
+	return _binary_tree_height(root, height);
+}
+
 #endif
