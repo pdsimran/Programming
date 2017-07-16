@@ -5,6 +5,10 @@
 
 using namespace std;
 
+// maintain count of left subtree nodes at each nodes.
+// Since we need BST and a new addition function so for now 
+// I am using this count function. and Assuming bst_node_count 
+// is giving count in O(1)
 int bst_node_count(node * root){
   if(!root) return 0;
   return 1 + bst_node_count(root->left) + bst_node_count(root->right);
